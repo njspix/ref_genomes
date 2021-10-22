@@ -24,7 +24,7 @@ process unpack {
     queue params.queue
     cpus 1
     time '72h'
-    conda params.conda_path+'/2bit'
+    conda params.conda_path+'/index'
 
     input:
         tuple val(name), path(twobit) 
@@ -82,7 +82,7 @@ process biscuit_index {
     queue params.queue
     cpus 1
     time '72h'
-    conda params.conda_path+'/seq_qc'
+    conda params.conda_path+'/index'
     publishDir "${params.out_dir}/${id}/biscuit", mode: 'copy'
 
     input:
@@ -102,7 +102,7 @@ process bwa_index {
     queue params.queue
     cpus 1
     time '72h'
-    conda params.conda_path+'/bwa'
+    conda params.conda_path+'/index'
     publishDir "${params.out_dir}/${id}/bwa", mode: 'copy'
 
     input:
